@@ -1,0 +1,72 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper,12pt,italian]{report}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+%Margini
+%(molto spesso al momento della stampa della tesi viene richiesto per qualche strano motivo di ridurre i margini rispetto al default di late ed aumentare l'interlinea. Consiglio di scrivere tutta la tesi ed effettuare le correzioni estetiche alla fine)
+%\usepackage[right=2.5cm,left=2.5cm,top=2.5cm,bottom=2.5cm,heightrounded,bindingoffset=5mm]{geometry}
+
+%Interlinea
+%\usepackage{setspace}
+%\onehalfspacing%Interlinea 1.5
+%\doublespacing%Interlinea 2
+
+%Stile della pagina (Migliora l'estetica della pagina, un esempio trovato su internet)
+%\usepackage{fancyhdr}
+%
+%\pagestyle{fancy}
+%\addtolength{\headwidth}{20pt}
+%\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1} {}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}}
+%\cfoot{}
+%\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{} {\bfseries\thepage}}
+%\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{} {\bfseries\rightmark}}
+
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[pdftex]{graphicx}			% Use pdf, png, jpg, or epsß with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex						
+%\usepackage{caption}				
+									
+%\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}			% Permette l'inserimento di caratteri in UTF-8
+\usepackage[italian]{babel}			% Traduce in italiano tutte le parti
+
+\usepackage{hyperref}				% Per rendere cliccabile l'indice
+\hypersetup{colorlinks=true,linkcolor=blue}
+
+\setcounter{tocdepth}{4}			% Setta la profondità dell'indice
+
+%Settaggi per i listati di codice (per un esempio vedi i commenti del file progconf.tex)
+\input{progconf.tex}
+
+%Bibliografia
+%\usepackage[autostyle,italian=guillemets]{csquotes}
+%\usepackage[backend=biber,style=alphabetic]{biblatex}
+%\addbibresource{file.bib}
+
+\title{Titolo}
+\author{Nome Cognome}
+\date{\today}							% Activate to display a given date or no date
+
+%\includeonly{title, cap5}%Aggiungere solo i file elencati
+
+\begin{document}
+
+%\include{title}%Include il frontespizio (per tesi)
+\maketitle%Da mettere se si vuole un titolo ma non si usa il frontespizio tesi
+
+\tableofcontents
+
+%Inclusione dei capitoli, ognuno nel proprio file .tex
+%Ricordare la direttiva come quella in linea 1 di questa pagina per non avere problemi con l'utf-8 (lettere accentate ecc.)
+%%%%%%%%
+%\include{cap1}
+
+%%%%%%%%
+%\include{cap2}
+
+\phantomsection%Per far comparire la bibliografia nell'indice
+\addcontentsline{toc}{section}{\refname}
+%\printbibliography%Stampa la bibliografia. Deccomentare la relativa sezione nel preambolo.
+
+\end{document} 
